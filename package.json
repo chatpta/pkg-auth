@@ -1,6 +1,6 @@
 {
-  "name": "@petercraftsmn/auth",
-  "version": "3.0.1",
+  "name": "@chatpta/auth",
+  "version": "1.0.0",
   "repository": "https://github.com/petercraftsmn/auth",
   "description": "General purpose authentication",
   "main": "index.js",
@@ -14,7 +14,6 @@
   "author": "Peter Craftsmn",
   "license": "ISC",
   "devDependencies": {
-    "mocha": "^7.1.0"
-  },
-  "dependencies": {}
+    "mocha": "^9.1.3"
+  }
 }
