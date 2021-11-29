@@ -1,7 +1,7 @@
 {
   "name": "@chatpta/auth",
   "version": "1.0.0",
-  "repository": "https://github.com/petercraftsmn/auth",
+  "repository": "https://github.com/chatpta/auth",
   "description": "General purpose authentication",
   "main": "index.js",
   "scripts": {
