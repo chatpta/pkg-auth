@@ -27,7 +27,7 @@ describe( 'Cryptography tests', function () {
             const encrypted_text = crypt.encryptString( some_text );
             assert.ok( encrypted_text, 'Text not encrypted' );
             const decrypted_text = crypt.decryptString( encrypted_text );
-            assert.equal( decrypted_text, some_text, 'Text not decrypted correctly' );
+            assert.deepStrictEqual( decrypted_text, some_text, 'Text not decrypted correctly' );
 
             // Altered or erroneous encrypted string
             const decrypted_text_altered = crypt.decryptString( encrypted_text + 'altered' );
@@ -45,7 +45,7 @@ describe( 'Cryptography tests', function () {
             const url_safe_string = crypt.makeStringUrlSafe( some_string );
             const url_unsafe_string = crypt.reverseStringUrlSafe( url_safe_string );
 
-            assert.equal( url_unsafe_string, some_string, 'Url safe and reverse is not working properly' );
+            assert.deepStrictEqual( url_unsafe_string, some_string, 'Url safe and reverse is not working properly' );
             done();
         } )
     } );
@@ -59,10 +59,10 @@ describe( 'Cryptography tests', function () {
             const signature = crypt.signToken( some_text );
             // Correctly verify signature
             let result = crypt.verifySignature( some_text, signature );
-            assert.equal( result, true, 'Signature not verified' );
+            assert.deepStrictEqual( result, true, 'Signature not verified' );
             // Fail the verification because text is not same
             let fail_result = crypt.verifySignature( some_other_text, signature );
-            assert.equal( fail_result, false, 'Signature verified' );
+            assert.deepStrictEqual( fail_result, false, 'Signature verified' );
             done();
         } )
     } )
@@ -74,7 +74,7 @@ describe( 'Cryptography tests', function () {
         it( 'create and verify base64', function ( done ) {
             const base64String = crypt.asciiToBase64( someText );
             let asciiString = crypt.base64ToAscii( base64String );
-            assert.equal( asciiString, someText, 'Base64 not verified' );
+            assert.deepStrictEqual( asciiString, someText, 'Base64 not verified' );
             done();
         } )
     } )

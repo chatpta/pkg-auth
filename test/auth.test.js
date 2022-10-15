@@ -63,7 +63,7 @@ describe( 'Auth test', function () {
                     authPc.decryptWebTokenSignedEncrypted( req );
                 } )
                 .then( () => {
-                    assert.equal( req.user.id, userId );
+                    assert.deepStrictEqual( req.user.id, userId );
                     done();
                 } )
                 .catch( done );
