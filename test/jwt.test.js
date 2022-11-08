@@ -9,14 +9,14 @@ describe( 'Test JWT token', function () {
     describe( 'Create and deconstruct jwt', function () {
 
         const header = {
-            alg: "HS256",
-            type: "jwt"
+            alg: 'sha512',
+            typ: 'JWT'
         };
 
         const payload = {
-            sub: "1234567890",
-            name: "John Doe",
-            iat: 1516239022
+            iat: 1639063025516,
+            client_id: '1c76ea46-a212-4cc5-9031-a9a28d927c4c',
+            roles: [ 'user', 'ie', 'ce' ]
         };
 
         it( 'creates jwt', function ( done ) {
